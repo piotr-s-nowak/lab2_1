@@ -55,5 +55,18 @@ class BinarySearchTest {
         searchResult.setPosition((int)list.length/2 + 1);
         assertThat(BinarySearch.search(3, list), Matchers.equalTo(searchResult));
     }
+    @Test
+    void elmNotInSeq() {
+        list = new int[]{1, 2, 3, 4, 5};
+        searchResult.setPosition(-1);
+        assertThat(BinarySearch.search(10, list), Matchers.equalTo(searchResult));
+    }
+
+    @Test
+    void emptySeq(){
+        list = new int[]{};
+        searchResult.setPosition(-1);
+        assertThat(BinarySearch.search(10, list), Matchers.equalTo(searchResult));
+    }
 
 }
